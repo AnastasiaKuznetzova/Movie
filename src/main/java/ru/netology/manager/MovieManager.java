@@ -4,13 +4,13 @@ import ru.netology.domain.Movie;
 
 public class MovieManager {
     private Movie[] movies = new Movie[0];
-    private int MovieLength = 10;
+    private int movieLength = 10;
 
     public MovieManager() {
     }
 
-    public MovieManager(int MovieLength) {
-        this.MovieLength = MovieLength;
+    public MovieManager(int movieLength) {
+        this.movieLength = movieLength;
     }
 
     public void addMovie(Movie movie) {
@@ -26,8 +26,8 @@ public class MovieManager {
     }
 
     public Movie[] getAddLastMovie() {
-        int resultLength = Math.min(MovieLength, movies.length);
-        Movie[] result = new Movie[MovieLength];
+        int resultLength = Math.min(movieLength, movies.length);
+        Movie[] result = new Movie[movieLength];
         for (int i = 0; i < result.length; i++) {
             int index = movies.length - i - 1;
             result[i] = movies[index];
