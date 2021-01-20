@@ -66,4 +66,24 @@ public class MovieManagerTest {
         Movie[] expected = new Movie[]{tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(expected, actual);
     }
+    @Test
+    void giveOutShowNothing() {
+        MovieManager manager = new MovieManager(0);
+        Movie[] actual = manager.getAddLastMovie();
+        Movie [] expected = new Movie[0];
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    void giveOutFifthLimitMovies() {
+        MovieManager manager = new MovieManager(5);
+        manager.addMovie(first);
+        manager.addMovie(second);
+        manager.addMovie(third);
+        manager.addMovie(fourth);
+        manager.addMovie(fifth);
+        Movie[] actual = manager.getAddLastMovie();
+        Movie[] expected = new Movie[] {fifth, fourth, third, second, first};
+        assertArrayEquals(expected, actual);
+    }
+
 }
